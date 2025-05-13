@@ -302,8 +302,8 @@
         const copyButton = document.getElementById("copy-button");
 
         if (
-            selectedCharacter === correctCharacter &&
-            selectedMove === correctMove
+            selectedCharacter === gameState.correctCharacter &&
+            selectedMove === gameState.correctMove
         ) {
             output.textContent = `Correct! It took you ${attempts} attempts.`;
             document.getElementById("gif").src = answergif;
