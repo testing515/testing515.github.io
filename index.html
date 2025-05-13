@@ -56,7 +56,7 @@
 <body>
   <h1 style="color: white">SSF2DLE</h1>
   <h2 style="color: white">Guess the character and move this hitbox belongs to</h2>
-  <img id="gif" src="https://i.ibb.co/TBpjRXKz/051325.gif" alt="ezgif-com-speed-3" alt="guess gif" style="border: 5px solid #7d7d7d;" width="300" height="400" />
+  <img id="gif" alt="ezgif-com-speed-3" alt="guess gif" style="border: 5px solid #7d7d7d;" width="300" height="400" />
   <p></p>
   
   <div id="guesses-container"></div>
@@ -226,7 +226,7 @@
         characterSelect.className = "";
         if (characterLocked) {
             characterSelect.disabled = true;
-            characterSelect.value = correctCharacter;
+            characterSelect.value = gameState.correctCharacter;
             characterSelect.classList.add("correct");
         }
 
@@ -235,7 +235,7 @@
         moveSelect.className = "";
         if (moveLocked) {
             moveSelect.disabled = true;
-            moveSelect.value = correctMove;
+            moveSelect.value = gameState.correctMove;
             moveSelect.classList.add("correct");
         }
 
@@ -271,7 +271,7 @@
         let rowResult = "";
 
         // Check character
-        if (selectedCharacter === correctCharacter) {
+        if (selectedCharacter === gameState.correctCharacter) {
             characterSelect.classList.add("correct");
             characterSelect.disabled = true;
             characterLocked = true;
@@ -283,7 +283,7 @@
         }
 
         // Check move
-        if (selectedMove === correctMove) {
+        if (selectedMove === gameState.correctMove) {
             moveSelect.classList.add("correct");
             moveSelect.disabled = true;
             moveLocked = true;
